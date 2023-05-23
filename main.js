@@ -22,7 +22,7 @@ function adicionarLinha() {
 
     if (atividades.includes(inputNomeAtividade.value)) {
         alert(`A atividade "${inputNomeAtividade.value}" já foi inserida.`);
-        return; // Sai da função para evitar adicionar a mesma atividade novamente.
+        return;
     }
 
     atividades.push(inputNomeAtividade.value);
@@ -47,7 +47,7 @@ function atualizarTabela() {
 
 function atualizarMediaFinal() {
     const mediaFinal = calculaMediaFinal();
-    document.getElementById('media-final-valor').textContent = mediaFinal;
+    document.getElementById('media-final-valor').textContent = mediaFinal.toFixed(2);
     document.getElementById('media-final-resultado').innerHTML = mediaFinal >= NotaMinima ? SpanAprovado : SpanReprovado;
 }
 
